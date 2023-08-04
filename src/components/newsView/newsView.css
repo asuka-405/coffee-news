@@ -1,0 +1,46 @@
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+#popup {
+  display: none;
+  width: -moz-max-content;
+  width: max-content;
+  height: 100px;
+  padding: 1em 2em;
+  position: absolute;
+  top: 40%;
+  right: 40%;
+  background-color: rgb(34, 34, 34);
+  color: whitesmoke;
+}
+@media (max-width: 600px) {
+  #popup {
+    right: 20%;
+  }
+}
+#popup span {
+  cursor: pointer;
+  width: 20px;
+  aspect-ratio: 1/1;
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 30px;
+  padding: 0.5em;
+  text-align: center;
+  position: absolute;
+  right: 1em;
+  border: 3px solid transparent;
+}
+#popup span:hover {
+  background-color: black;
+  color: whitesmoke;
+  border-color: whitesmoke;
+}
+#popup p {
+  margin-top: 4em;
+}/*# sourceMappingURL=newsView.css.map */

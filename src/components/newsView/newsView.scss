@@ -1,0 +1,43 @@
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+#popup {
+  display: none;
+  width: max-content;
+  height: 100px;
+  padding: 1em 2em;
+  position: absolute;
+  top: 40%;
+  right: 40%;
+  @media (max-width: 600px) {
+    right: 20%;
+  }
+  background-color: rgb(34, 34, 34);
+  color: whitesmoke;
+  span {
+    cursor: pointer;
+    width: 20px;
+    aspect-ratio: 1/1;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 30px;
+    padding: 0.5em;
+    text-align: center;
+    position: absolute;
+    right: 1em;
+    border: 3px solid transparent;
+    &:hover {
+      background-color: black;
+      color: whitesmoke;
+      border-color: whitesmoke;
+    }
+  }
+  p {
+    margin-top: 4em;
+  }
+}

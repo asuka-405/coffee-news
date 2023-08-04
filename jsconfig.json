@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@fire/*": ["./firebase/*"],
+      "@component/*": ["./src/components/*"],
+    }
+  },
+  "resolveOptions": {
+    "preferRelative": true
+  }
+}
