@@ -7,7 +7,7 @@ export const fetchNews = async (query) => {
   const endpoint = `${url}/v2/everything?q=${query}`
 
   const headers = {
-    "X-Api-Key": "6b42ee8df51247109e870e4f1d6b59cf",
+    "X-Api-Key": process.env.PRIVATE_NEWS_API_KEY,
   }
 
   let news, error

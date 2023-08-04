@@ -16,12 +16,12 @@ import {
 // }
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB1vYWRJbZpXMHbRyLhRoTV22GIVhwzl-s",
-  authDomain: "coffee-news-aec05.firebaseapp.com",
-  projectId: "coffee-news-aec05",
-  storageBucket: "coffee-news-aec05.appspot.com",
-  messagingSenderId: "285957998457",
-  appId: "1:285957998457:web:427c899bdc3bf6a6b851a8",
+  apiKey: process.env.PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGE_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
 }
 
 let firebaseApp = getApps().length
