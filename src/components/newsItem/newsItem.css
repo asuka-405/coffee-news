@@ -74,6 +74,11 @@
   color: #fff;
 }
 
+.let-heart-glow {
+  background-color: #ec4646 !important;
+  color: #fff !important;
+}
+
 .card-footer {
   margin-top: 1.25rem;
   border-top: 1px solid #ddd;

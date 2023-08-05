@@ -73,9 +73,10 @@ const NewsView = ({ isPrivate, savedNews }) => {
             article={article}
             key={key}
             isGrid={isGrid}
-            updateLike={(article) => {
+            isLiked={savedNews ? true : false}
+            updateLike={(article, isLiked) => {
               if (isPrivate) return router.push("/auth/signin")
-              updateLike(article)
+              updateLike(article, isLiked)
             }}
           />
         ))}

@@ -1,6 +1,9 @@
+import { useRef } from "react"
 import "./newsItem.css"
 
-const NewsItem = ({ article, isGrid, updateLike }) => {
+const NewsItem = ({ article, isGrid, updateLike, isLiked }) => {
+  console.log(isLiked, "isLiked")
+
   let styles = {}
 
   if (isGrid) {
@@ -17,6 +20,12 @@ const NewsItem = ({ article, isGrid, updateLike }) => {
     }
   }
 
+  const heartRef = useRef(null)
+  if (isLiked) {
+    if (!heartRef.current) return
+    heartRef.current.classList.add("let-heart-glow")
+  }
+
   return (
     <article className="card" style={styles}>
       <img
@@ -27,7 +36,11 @@ const NewsItem = ({ article, isGrid, updateLike }) => {
       <div>
         <div className="card-header">
           <a href="#">{article.title}</a>
-          <button className="icon-button" onClick={() => updateLike(article)}>
+          <button
+            ref={heartRef}
+            className="icon-button"
+            onClick={() => updateLike(article, isLiked)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
