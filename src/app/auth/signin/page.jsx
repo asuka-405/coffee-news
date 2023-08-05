@@ -5,15 +5,40 @@ import { useRouter } from "next/navigation"
 import React, { useState } from "react"
 import "../auth.css"
 
+/**
+ * @returns {JSX.Element} SignIn Page
+ * @description SignIn Page
+ * @version 1.0.0
+ * @example
+ * import SignIn from "@app/auth/signin/page"
+ * const Component = () => {
+ * return <SignIn />
+ * }
+ * export default Component
+ * @see https://www.npmjs.com/package/next
+ */
 const signin = () => {
+  // state management
+  // email input state
   const [email, setEmail] = useState("")
+  // password input state
   const [password, setPassword] = useState("")
+  // popup display state
   const [popupDisplay, setPopupDisplay] = useState("none")
+  // popup content state
   const [popupContent, setPopupContent] = useState("")
+
   const router = useRouter()
+
+  /**
+   * @param {Event} e
+   * @returns {Promise<void>}
+   * @description handleSignIn
+   */
 
   const handleSignIn = async (e) => {
     e.preventDefault()
+    // sign in user with email and password from firebase auth
     const { user, error } = await signIn(email, password)
     if (error) {
       console.log(error)

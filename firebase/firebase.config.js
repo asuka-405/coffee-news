@@ -1,9 +1,9 @@
 import { getApps, initializeApp } from "firebase/app"
-import {
-  CACHE_SIZE_UNLIMITED,
-  persistentLocalCache,
-  persistentMultipleTabManager,
-} from "firebase/firestore"
+// import {
+//   CACHE_SIZE_UNLIMITED,
+//   persistentLocalCache,
+//   persistentMultipleTabManager,
+// } from "firebase/firestore"
 
 // const firebaseConfig = {
 //   apiKey: process.env.PUBLIC_FIREBASE_API_KEY,
@@ -14,6 +14,11 @@ import {
 //   appId: process.env.FIREBASE_APP_ID,
 // }
 
+/**
+ * @type {import("firebase/app").FirebaseOptions}
+ * @description firebase config
+ * @see https://firebase.google.com/docs/web/setup#available-libraries
+ */
 const firebaseConfig = {
   apiKey: "AIzaSyB1vYWRJbZpXMHbRyLhRoTV22GIVhwzl-s",
   authDomain: "coffee-news-aec05.firebaseapp.com",
@@ -23,6 +28,11 @@ const firebaseConfig = {
   appId: "1:285957998457:web:427c899bdc3bf6a6b851a8",
 }
 
+/**
+ * @type {import("firebase/app").FirebaseApp}
+ * @description firebase app
+ * @see https://firebase.google.com/docs/reference/js/firebase.app.App
+ */
 let firebaseApp = getApps().length
   ? getApps()[0]
   : initializeApp(firebaseConfig)

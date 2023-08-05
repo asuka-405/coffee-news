@@ -3,17 +3,18 @@ import { useEffect, useRef, useState } from "react"
 import "./modern.css"
 
 const Modern = ({ renderNews }) => {
+  // ref to news search box
   const newsRef = useRef(null)
 
-  const [news, setNews] = useState([])
-  const [error, setError] = useState("")
-
+  // update news
   const updateNews = async (e) => {
     e.preventDefault()
     await fetchNews(newsRef.current.value).then((res) => {
       renderNews(res)
     })
   }
+
+  // update news on component mount
   useEffect(() => {
     ;(async () => {
       await updateNews({ preventDefault: () => {} })

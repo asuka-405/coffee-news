@@ -6,8 +6,12 @@ import { useState } from "react"
 import "../../auth/auth.css"
 
 const SignOut = () => {
+  // state management
+  // popup display state
   const [popupDisplay, setPopupDisplay] = useState("none")
+  // popup content state
   const [popupContent, setPopupContent] = useState("")
+
   const router = useRouter()
 
   return (

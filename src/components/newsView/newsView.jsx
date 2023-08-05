@@ -8,13 +8,20 @@ import ToggleSwitch from "../toggleSwitch/switch"
 import "./newsView.css"
 
 const NewsView = ({ isPrivate, savedNews }) => {
+  // current structural css of news view
   const [structure, setStructure] = useState({})
 
   const router = useRouter()
 
+  // toggle switch state
   const [checked, setChecked] = useState(false)
+
+  // grid or list view state
   const [isGrid, setIsGrid] = useState(false)
 
+  // for list view, set styles
+  // if window width is less than 640px, set styles for mobile
+  // else set styles for desktop
   let listStyles = {}
   useEffect(() => {
     listStyles =
@@ -35,6 +42,8 @@ const NewsView = ({ isPrivate, savedNews }) => {
           }
   }, [])
 
+  // if toggle switch is checked, set grid view
+  // else set list view
   useEffect(() => {
     if (!checked) {
       setIsGrid(false)
@@ -46,20 +55,28 @@ const NewsView = ({ isPrivate, savedNews }) => {
     } // list
   }, [checked])
 
+  // news state
+  // if saved news, set news to saved news
+  // else set news to empty array
   const [news, setNews] = useState(savedNews || [])
+
+  // if saved news changes, update news
   useEffect(() => {
     if (savedNews) setNews(savedNews)
   }, [savedNews])
 
+  // popup ref
   const popupRef = useRef(null)
 
+  // render news
   const renderNews = ({ news, error }) => {
+    // if error, display popup
     if (error) {
       popupRef.current.style.display = "block"
       popupRef.current.children[1].innerHTML = error
       popupRef.current.children[0].addEventListener("click", () => {
         popupRef.current.style.display = "none"
-      })
+      }) // else set news
     } else setNews(news)
   }
 

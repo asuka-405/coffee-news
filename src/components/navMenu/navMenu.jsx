@@ -5,8 +5,11 @@ import "./navMenu.css"
 
 const NavMenu = ({ links }) => {
   const router = useRouter()
+
+  // reference to nav element
   const navRef = useRef(null)
 
+  // toggle nav menu
   const toggleNav = () => {
     navRef.current.querySelector(".close").style.display = "inline"
     navRef.current.querySelector(".links").style.display = "flex"

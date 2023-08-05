@@ -5,11 +5,18 @@ import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
+// metadata for private users
 export const metadata = {
   title: "News 🍵",
   description: "Read the latest news from around the world",
 }
+
 export default function RootLayout({ children }) {
+  /**
+   * @type {{to: string, text: string}[]}
+   * @description links for the nav menu
+   */
+
   const links = [
     { to: "/user/liked", text: "Liked" },
     { to: "/user/dashboard", text: "Profile" },

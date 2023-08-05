@@ -3,7 +3,21 @@ import { useAuthContext } from "@/context/AuthContext"
 import { useRouter } from "next/navigation"
 import "./dashboard.css"
 
+/**
+ * @returns {JSX.Element} Dashboard Page
+ * @description Dashboard Page
+ * @version 1.0.0
+ * @example
+ * import Dashboard from "@app/user/dashboard/page"
+ * const Component = () => {
+ * return <Dashboard />
+ * }
+ * export default Component
+ * @see https://www.npmjs.com/package/next
+ */
+
 export default function dashboard() {
+  // user from auth context
   const { user } = useAuthContext()
   const router = useRouter()
 

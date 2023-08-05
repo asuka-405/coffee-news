@@ -2,10 +2,10 @@ import { useRef } from "react"
 import "./newsItem.css"
 
 const NewsItem = ({ article, isGrid, updateLike, isLiked }) => {
-  console.log(isLiked, "isLiked")
-
+  // initiate styles variable for grid or list view
   let styles = {}
 
+  // if grid view
   if (isGrid) {
     styles = {
       display: "flex",
@@ -20,7 +20,9 @@ const NewsItem = ({ article, isGrid, updateLike, isLiked }) => {
     }
   }
 
+  // ref for heart icon
   const heartRef = useRef(null)
+  // if post is liked, add glow class
   if (isLiked) {
     if (!heartRef.current) return
     heartRef.current.classList.add("let-heart-glow")
