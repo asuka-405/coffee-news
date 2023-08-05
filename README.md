@@ -1,34 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# News 🍵
 
-## Getting Started
+A NextJS Firebase Webapp to chill and read news
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+- Private mode to view news without logging in
+- Login and registration pages
+- Liked news view
+- Code with JSDOC
+- Firebase authentication
+- Firestore for saving liked news
+
+## Prerequisites
+
+- NodeJS v18.16.0 or higher
+
+## Setup
+
+- install yarn
+
+```
+npm install yarn --location=global
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- install dependencies
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Commands
 
-## Learn More
+- Start Webapp
 
-To learn more about Next.js, take a look at the following resources:
+```
+yarn dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Pages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- /private : view news without signing in
 
-## Deploy on Vercel
+- /auth/signin : signin to your account
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- /auth/signup : signup with a new email
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- /user/dashboard : view what info about you have been saved in our database
+
+- /user/feed : view news and add news to liked list
+
+- /user/liked : view what news have you liked
+
+- /auth/logout : log off your account
