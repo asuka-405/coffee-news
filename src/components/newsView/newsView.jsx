@@ -8,25 +8,41 @@ import ToggleSwitch from "../toggleSwitch/switch"
 import "./newsView.css"
 
 const NewsView = ({ isPrivate, savedNews }) => {
-  const [twoColLayout, setTwoColLayout] = useState({})
+  const [structure, setStructure] = useState({})
 
   const router = useRouter()
 
   const [checked, setChecked] = useState(false)
-  const [isGrid, setIsGrid] = useState(false) // false = list, true = grid
+  const [isGrid, setIsGrid] = useState(false)
+
+  let listStyles = {}
+  useEffect(() => {
+    listStyles =
+      window.innerWidth < 640
+        ? {
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "1em",
+            width: "90vw",
+          }
+        : {
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "1rem",
+            width: "100%",
+          }
+  }, [])
+
   useEffect(() => {
     if (!checked) {
       setIsGrid(false)
-      setTwoColLayout({})
+      setStructure({})
     } // grid
     else {
       setIsGrid(true)
-      setTwoColLayout({
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gap: "1rem",
-        width: "100%",
-      })
+      setStructure(listStyles)
     } // list
   }, [checked])
 
@@ -51,7 +67,7 @@ const NewsView = ({ isPrivate, savedNews }) => {
     <div>
       <ToggleSwitch checked={setChecked} />
       {savedNews ? "" : <Modern renderNews={renderNews} />}
-      <div className="news card-list" style={twoColLayout}>
+      <div className="news card-list" style={structure}>
         {news.map((article, key) => (
           <NewsItem
             article={article}
